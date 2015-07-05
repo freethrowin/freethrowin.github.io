@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "browserify -d -e src/js/app.jsx -t babelify -o build/app.js"
+    "build": "browserify -d -e src/js/index.jsx -t babelify -o build/app.js",
+    "clean": "rm -rf build/*"
   },
   "repository": {
     "type": "git",
