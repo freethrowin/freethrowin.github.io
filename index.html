@@ -2902,6 +2902,633 @@ Elm.Html.make = function (_elm) {
                       ,menuitem: menuitem
                       ,menu: menu};
    return _elm.Html.values;
+};Elm.Html = Elm.Html || {};
+Elm.Html.Attributes = Elm.Html.Attributes || {};
+Elm.Html.Attributes.make = function (_elm) {
+   "use strict";
+   _elm.Html = _elm.Html || {};
+   _elm.Html.Attributes = _elm.Html.Attributes || {};
+   if (_elm.Html.Attributes.values)
+   return _elm.Html.Attributes.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "Html.Attributes",
+   $Basics = Elm.Basics.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Json$Encode = Elm.Json.Encode.make(_elm),
+   $List = Elm.List.make(_elm),
+   $String = Elm.String.make(_elm),
+   $VirtualDom = Elm.VirtualDom.make(_elm);
+   var attribute = $VirtualDom.attribute;
+   var property = $VirtualDom.property;
+   var stringProperty = F2(function (name,
+   string) {
+      return A2(property,
+      name,
+      $Json$Encode.string(string));
+   });
+   var $class = function (name) {
+      return A2(stringProperty,
+      "className",
+      name);
+   };
+   var id = function (name) {
+      return A2(stringProperty,
+      "id",
+      name);
+   };
+   var title = function (name) {
+      return A2(stringProperty,
+      "title",
+      name);
+   };
+   var accesskey = function ($char) {
+      return A2(stringProperty,
+      "accesskey",
+      $String.fromList(_L.fromArray([$char])));
+   };
+   var contextmenu = function (value) {
+      return A2(stringProperty,
+      "contextmenu",
+      value);
+   };
+   var dir = function (value) {
+      return A2(stringProperty,
+      "dir",
+      value);
+   };
+   var draggable = function (value) {
+      return A2(stringProperty,
+      "draggable",
+      value);
+   };
+   var dropzone = function (value) {
+      return A2(stringProperty,
+      "dropzone",
+      value);
+   };
+   var itemprop = function (value) {
+      return A2(stringProperty,
+      "itemprop",
+      value);
+   };
+   var lang = function (value) {
+      return A2(stringProperty,
+      "lang",
+      value);
+   };
+   var tabindex = function (n) {
+      return A2(stringProperty,
+      "tabIndex",
+      $Basics.toString(n));
+   };
+   var charset = function (value) {
+      return A2(stringProperty,
+      "charset",
+      value);
+   };
+   var content = function (value) {
+      return A2(stringProperty,
+      "content",
+      value);
+   };
+   var httpEquiv = function (value) {
+      return A2(stringProperty,
+      "httpEquiv",
+      value);
+   };
+   var language = function (value) {
+      return A2(stringProperty,
+      "language",
+      value);
+   };
+   var src = function (value) {
+      return A2(stringProperty,
+      "src",
+      value);
+   };
+   var height = function (value) {
+      return A2(stringProperty,
+      "height",
+      $Basics.toString(value));
+   };
+   var width = function (value) {
+      return A2(stringProperty,
+      "width",
+      $Basics.toString(value));
+   };
+   var alt = function (value) {
+      return A2(stringProperty,
+      "alt",
+      value);
+   };
+   var preload = function (value) {
+      return A2(stringProperty,
+      "preload",
+      value);
+   };
+   var poster = function (value) {
+      return A2(stringProperty,
+      "poster",
+      value);
+   };
+   var kind = function (value) {
+      return A2(stringProperty,
+      "kind",
+      value);
+   };
+   var srclang = function (value) {
+      return A2(stringProperty,
+      "srclang",
+      value);
+   };
+   var sandbox = function (value) {
+      return A2(stringProperty,
+      "sandbox",
+      value);
+   };
+   var srcdoc = function (value) {
+      return A2(stringProperty,
+      "srcdoc",
+      value);
+   };
+   var type$ = function (value) {
+      return A2(stringProperty,
+      "type",
+      value);
+   };
+   var value = function (value) {
+      return A2(stringProperty,
+      "value",
+      value);
+   };
+   var placeholder = function (value) {
+      return A2(stringProperty,
+      "placeholder",
+      value);
+   };
+   var accept = function (value) {
+      return A2(stringProperty,
+      "accept",
+      value);
+   };
+   var acceptCharset = function (value) {
+      return A2(stringProperty,
+      "acceptCharset",
+      value);
+   };
+   var action = function (value) {
+      return A2(stringProperty,
+      "action",
+      value);
+   };
+   var autocomplete = function (bool) {
+      return A2(stringProperty,
+      "autocomplete",
+      bool ? "on" : "off");
+   };
+   var autosave = function (value) {
+      return A2(stringProperty,
+      "autosave",
+      value);
+   };
+   var enctype = function (value) {
+      return A2(stringProperty,
+      "enctype",
+      value);
+   };
+   var formaction = function (value) {
+      return A2(stringProperty,
+      "formaction",
+      value);
+   };
+   var list = function (value) {
+      return A2(stringProperty,
+      "list",
+      value);
+   };
+   var minlength = function (n) {
+      return A2(stringProperty,
+      "minLength",
+      $Basics.toString(n));
+   };
+   var maxlength = function (n) {
+      return A2(stringProperty,
+      "maxLength",
+      $Basics.toString(n));
+   };
+   var method = function (value) {
+      return A2(stringProperty,
+      "method",
+      value);
+   };
+   var name = function (value) {
+      return A2(stringProperty,
+      "name",
+      value);
+   };
+   var pattern = function (value) {
+      return A2(stringProperty,
+      "pattern",
+      value);
+   };
+   var size = function (n) {
+      return A2(stringProperty,
+      "size",
+      $Basics.toString(n));
+   };
+   var $for = function (value) {
+      return A2(stringProperty,
+      "htmlFor",
+      value);
+   };
+   var form = function (value) {
+      return A2(stringProperty,
+      "form",
+      value);
+   };
+   var max = function (value) {
+      return A2(stringProperty,
+      "max",
+      value);
+   };
+   var min = function (value) {
+      return A2(stringProperty,
+      "min",
+      value);
+   };
+   var step = function (n) {
+      return A2(stringProperty,
+      "step",
+      n);
+   };
+   var cols = function (n) {
+      return A2(stringProperty,
+      "cols",
+      $Basics.toString(n));
+   };
+   var rows = function (n) {
+      return A2(stringProperty,
+      "rows",
+      $Basics.toString(n));
+   };
+   var wrap = function (value) {
+      return A2(stringProperty,
+      "wrap",
+      value);
+   };
+   var usemap = function (value) {
+      return A2(stringProperty,
+      "useMap",
+      value);
+   };
+   var shape = function (value) {
+      return A2(stringProperty,
+      "shape",
+      value);
+   };
+   var coords = function (value) {
+      return A2(stringProperty,
+      "coords",
+      value);
+   };
+   var challenge = function (value) {
+      return A2(stringProperty,
+      "challenge",
+      value);
+   };
+   var keytype = function (value) {
+      return A2(stringProperty,
+      "keytype",
+      value);
+   };
+   var align = function (value) {
+      return A2(stringProperty,
+      "align",
+      value);
+   };
+   var cite = function (value) {
+      return A2(stringProperty,
+      "cite",
+      value);
+   };
+   var href = function (value) {
+      return A2(stringProperty,
+      "href",
+      value);
+   };
+   var target = function (value) {
+      return A2(stringProperty,
+      "target",
+      value);
+   };
+   var downloadAs = function (value) {
+      return A2(stringProperty,
+      "download",
+      value);
+   };
+   var hreflang = function (value) {
+      return A2(stringProperty,
+      "hreflang",
+      value);
+   };
+   var media = function (value) {
+      return A2(stringProperty,
+      "media",
+      value);
+   };
+   var ping = function (value) {
+      return A2(stringProperty,
+      "ping",
+      value);
+   };
+   var rel = function (value) {
+      return A2(stringProperty,
+      "rel",
+      value);
+   };
+   var datetime = function (value) {
+      return A2(stringProperty,
+      "datetime",
+      value);
+   };
+   var pubdate = function (value) {
+      return A2(stringProperty,
+      "pubdate",
+      value);
+   };
+   var start = function (n) {
+      return A2(stringProperty,
+      "start",
+      $Basics.toString(n));
+   };
+   var colspan = function (n) {
+      return A2(stringProperty,
+      "colSpan",
+      $Basics.toString(n));
+   };
+   var headers = function (value) {
+      return A2(stringProperty,
+      "headers",
+      value);
+   };
+   var rowspan = function (n) {
+      return A2(stringProperty,
+      "rowSpan",
+      $Basics.toString(n));
+   };
+   var scope = function (value) {
+      return A2(stringProperty,
+      "scope",
+      value);
+   };
+   var manifest = function (value) {
+      return A2(stringProperty,
+      "manifest",
+      value);
+   };
+   var boolProperty = F2(function (name,
+   bool) {
+      return A2(property,
+      name,
+      $Json$Encode.bool(bool));
+   });
+   var hidden = function (bool) {
+      return A2(boolProperty,
+      "hidden",
+      bool);
+   };
+   var contenteditable = function (bool) {
+      return A2(boolProperty,
+      "contentEditable",
+      bool);
+   };
+   var spellcheck = function (bool) {
+      return A2(boolProperty,
+      "spellcheck",
+      bool);
+   };
+   var async = function (bool) {
+      return A2(boolProperty,
+      "async",
+      bool);
+   };
+   var defer = function (bool) {
+      return A2(boolProperty,
+      "defer",
+      bool);
+   };
+   var scoped = function (bool) {
+      return A2(boolProperty,
+      "scoped",
+      bool);
+   };
+   var autoplay = function (bool) {
+      return A2(boolProperty,
+      "autoplay",
+      bool);
+   };
+   var controls = function (bool) {
+      return A2(boolProperty,
+      "controls",
+      bool);
+   };
+   var loop = function (bool) {
+      return A2(boolProperty,
+      "loop",
+      bool);
+   };
+   var $default = function (bool) {
+      return A2(boolProperty,
+      "default",
+      bool);
+   };
+   var seamless = function (bool) {
+      return A2(boolProperty,
+      "seamless",
+      bool);
+   };
+   var checked = function (bool) {
+      return A2(boolProperty,
+      "checked",
+      bool);
+   };
+   var selected = function (bool) {
+      return A2(boolProperty,
+      "selected",
+      bool);
+   };
+   var autofocus = function (bool) {
+      return A2(boolProperty,
+      "autofocus",
+      bool);
+   };
+   var disabled = function (bool) {
+      return A2(boolProperty,
+      "disabled",
+      bool);
+   };
+   var multiple = function (bool) {
+      return A2(boolProperty,
+      "multiple",
+      bool);
+   };
+   var novalidate = function (bool) {
+      return A2(boolProperty,
+      "noValidate",
+      bool);
+   };
+   var readonly = function (bool) {
+      return A2(boolProperty,
+      "readOnly",
+      bool);
+   };
+   var required = function (bool) {
+      return A2(boolProperty,
+      "required",
+      bool);
+   };
+   var ismap = function (value) {
+      return A2(boolProperty,
+      "isMap",
+      value);
+   };
+   var download = function (bool) {
+      return A2(boolProperty,
+      "download",
+      bool);
+   };
+   var reversed = function (bool) {
+      return A2(boolProperty,
+      "reversed",
+      bool);
+   };
+   var classList = function (list) {
+      return $class($String.join(" ")($List.map($Basics.fst)($List.filter($Basics.snd)(list))));
+   };
+   var style = function (props) {
+      return property("style")($Json$Encode.object($List.map(function (_v0) {
+         return function () {
+            switch (_v0.ctor)
+            {case "_Tuple2":
+               return {ctor: "_Tuple2"
+                      ,_0: _v0._0
+                      ,_1: $Json$Encode.string(_v0._1)};}
+            _U.badCase($moduleName,
+            "on line 133, column 35 to 57");
+         }();
+      })(props)));
+   };
+   var key = function (k) {
+      return A2(stringProperty,
+      "key",
+      k);
+   };
+   _elm.Html.Attributes.values = {_op: _op
+                                 ,key: key
+                                 ,style: style
+                                 ,classList: classList
+                                 ,property: property
+                                 ,stringProperty: stringProperty
+                                 ,boolProperty: boolProperty
+                                 ,attribute: attribute
+                                 ,$class: $class
+                                 ,hidden: hidden
+                                 ,id: id
+                                 ,title: title
+                                 ,accesskey: accesskey
+                                 ,contenteditable: contenteditable
+                                 ,contextmenu: contextmenu
+                                 ,dir: dir
+                                 ,draggable: draggable
+                                 ,dropzone: dropzone
+                                 ,itemprop: itemprop
+                                 ,lang: lang
+                                 ,spellcheck: spellcheck
+                                 ,tabindex: tabindex
+                                 ,async: async
+                                 ,charset: charset
+                                 ,content: content
+                                 ,defer: defer
+                                 ,httpEquiv: httpEquiv
+                                 ,language: language
+                                 ,scoped: scoped
+                                 ,src: src
+                                 ,height: height
+                                 ,width: width
+                                 ,alt: alt
+                                 ,autoplay: autoplay
+                                 ,controls: controls
+                                 ,loop: loop
+                                 ,preload: preload
+                                 ,poster: poster
+                                 ,$default: $default
+                                 ,kind: kind
+                                 ,srclang: srclang
+                                 ,sandbox: sandbox
+                                 ,seamless: seamless
+                                 ,srcdoc: srcdoc
+                                 ,type$: type$
+                                 ,value: value
+                                 ,checked: checked
+                                 ,placeholder: placeholder
+                                 ,selected: selected
+                                 ,accept: accept
+                                 ,acceptCharset: acceptCharset
+                                 ,action: action
+                                 ,autocomplete: autocomplete
+                                 ,autofocus: autofocus
+                                 ,autosave: autosave
+                                 ,disabled: disabled
+                                 ,enctype: enctype
+                                 ,formaction: formaction
+                                 ,list: list
+                                 ,minlength: minlength
+                                 ,maxlength: maxlength
+                                 ,method: method
+                                 ,multiple: multiple
+                                 ,name: name
+                                 ,novalidate: novalidate
+                                 ,pattern: pattern
+                                 ,readonly: readonly
+                                 ,required: required
+                                 ,size: size
+                                 ,$for: $for
+                                 ,form: form
+                                 ,max: max
+                                 ,min: min
+                                 ,step: step
+                                 ,cols: cols
+                                 ,rows: rows
+                                 ,wrap: wrap
+                                 ,ismap: ismap
+                                 ,usemap: usemap
+                                 ,shape: shape
+                                 ,coords: coords
+                                 ,challenge: challenge
+                                 ,keytype: keytype
+                                 ,align: align
+                                 ,cite: cite
+                                 ,href: href
+                                 ,target: target
+                                 ,download: download
+                                 ,downloadAs: downloadAs
+                                 ,hreflang: hreflang
+                                 ,media: media
+                                 ,ping: ping
+                                 ,rel: rel
+                                 ,datetime: datetime
+                                 ,pubdate: pubdate
+                                 ,reversed: reversed
+                                 ,start: start
+                                 ,colspan: colspan
+                                 ,headers: headers
+                                 ,rowspan: rowspan
+                                 ,scope: scope
+                                 ,manifest: manifest};
+   return _elm.Html.Attributes.values;
 };Elm.Json = Elm.Json || {};
 Elm.Json.Decode = Elm.Json.Decode || {};
 Elm.Json.Decode.make = function (_elm) {
@@ -3413,12 +4040,30 @@ Elm.Main.make = function (_elm) {
    _U = _N.Utils.make(_elm),
    _L = _N.List.make(_elm),
    $moduleName = "Main",
-   $Html = Elm.Html.make(_elm);
+   $Basics = Elm.Basics.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm);
+   var background = _L.fromArray([{ctor: "_Tuple2"
+                                  ,_0: "background-color"
+                                  ,_1: "rgb(255, 0, 0)"}]);
+   var font = _L.fromArray([{ctor: "_Tuple2"
+                            ,_0: "font-family"
+                            ,_1: "futura, sans-serif"}
+                           ,{ctor: "_Tuple2"
+                            ,_0: "color"
+                            ,_1: "rgb(42, 42, 42)"}
+                           ,{ctor: "_Tuple2"
+                            ,_0: "font-size"
+                            ,_1: "2em"}]);
    var app = A2($Html.div,
-   _L.fromArray([]),
+   _L.fromArray([$Html$Attributes.style(A2($Basics._op["++"],
+   font,
+   background))]),
    _L.fromArray([$Html.text("yo")]));
    var main = app;
    _elm.Main.values = {_op: _op
+                      ,font: font
+                      ,background: background
                       ,app: app
                       ,main: main};
    return _elm.Main.values;
@@ -12425,6 +13070,1020 @@ Elm.Transform2D.make = function (_elm) {
                              ,scaleX: scaleX
                              ,scaleY: scaleY};
    return _elm.Transform2D.values;
+};Elm.TypedStyles = Elm.TypedStyles || {};
+Elm.TypedStyles.make = function (_elm) {
+   "use strict";
+   _elm.TypedStyles = _elm.TypedStyles || {};
+   if (_elm.TypedStyles.values)
+   return _elm.TypedStyles.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "TypedStyles",
+   $Basics = Elm.Basics.make(_elm),
+   $Color = Elm.Color.make(_elm);
+   var opacity$ = F2(function (x,
+   y) {
+      return {ctor: "_Tuple3"
+             ,_0: "opacity"
+             ,_1: $Basics.toString(x)
+             ,_2: $Basics.toString(y)};
+   });
+   var opacity = function (x) {
+      return {ctor: "_Tuple2"
+             ,_0: "opacity"
+             ,_1: $Basics.toString(x)};
+   };
+   var textJustify = {ctor: "_Tuple2"
+                     ,_0: "text-align"
+                     ,_1: "justify"};
+   var textCenter = {ctor: "_Tuple2"
+                    ,_0: "text-align"
+                    ,_1: "center"};
+   var textRight = {ctor: "_Tuple2"
+                   ,_0: "text-align"
+                   ,_1: "right"};
+   var textLeft = {ctor: "_Tuple2"
+                  ,_0: "text-align"
+                  ,_1: "left"};
+   var cssColor = function (c) {
+      return function () {
+         var x = $Color.toRgb(c);
+         return A2($Basics._op["++"],
+         "rgba(",
+         A2($Basics._op["++"],
+         $Basics.toString(x.red),
+         A2($Basics._op["++"],
+         ",",
+         A2($Basics._op["++"],
+         $Basics.toString(x.green),
+         A2($Basics._op["++"],
+         ",",
+         A2($Basics._op["++"],
+         $Basics.toString(x.blue),
+         A2($Basics._op["++"],
+         ",",
+         A2($Basics._op["++"],
+         $Basics.toString(x.alpha),
+         ")"))))))));
+      }();
+   };
+   var borderStyleSerializer = function (x) {
+      return function () {
+         switch (x.ctor)
+         {case "Dashed": return "Dashed";
+            case "Dotted": return "Dotted";
+            case "Double": return "Double";
+            case "Groove": return "Groove";
+            case "Inset": return "Inset";
+            case "Outset": return "Outset";
+            case "Ridge": return "Ridge";
+            case "Solid": return "Solid";}
+         _U.badCase($moduleName,
+         "between lines 712 and 723");
+      }();
+   };
+   var Outset = {ctor: "Outset"};
+   var Inset = {ctor: "Inset"};
+   var Ridge = {ctor: "Ridge"};
+   var Groove = {ctor: "Groove"};
+   var Double = {ctor: "Double"};
+   var Dashed = {ctor: "Dashed"};
+   var Dotted = {ctor: "Dotted"};
+   var Solid = {ctor: "Solid"};
+   var outlineColor$ = F2(function (x,
+   y) {
+      return {ctor: "_Tuple3"
+             ,_0: "outline-color"
+             ,_1: cssColor(x)
+             ,_2: cssColor(y)};
+   });
+   var outlineColor = function (x) {
+      return {ctor: "_Tuple2"
+             ,_0: "outline-color"
+             ,_1: cssColor(x)};
+   };
+   var borderBottomColor$ = F2(function (x,
+   y) {
+      return {ctor: "_Tuple3"
+             ,_0: "border-bottom-color"
+             ,_1: cssColor(x)
+             ,_2: cssColor(y)};
+   });
+   var borderBottomColor = function (x) {
+      return {ctor: "_Tuple2"
+             ,_0: "border-bottom-color"
+             ,_1: cssColor(x)};
+   };
+   var borderTopColor$ = F2(function (x,
+   y) {
+      return {ctor: "_Tuple3"
+             ,_0: "border-top-color"
+             ,_1: cssColor(x)
+             ,_2: cssColor(y)};
+   });
+   var borderTopColor = function (x) {
+      return {ctor: "_Tuple2"
+             ,_0: "border-top-color"
+             ,_1: cssColor(x)};
+   };
+   var borderRightColor$ = F2(function (x,
+   y) {
+      return {ctor: "_Tuple3"
+             ,_0: "border-right-color"
+             ,_1: cssColor(x)
+             ,_2: cssColor(y)};
+   });
+   var borderRightColor = function (x) {
+      return {ctor: "_Tuple2"
+             ,_0: "border-right-color"
+             ,_1: cssColor(x)};
+   };
+   var borderLeftColor$ = F2(function (x,
+   y) {
+      return {ctor: "_Tuple3"
+             ,_0: "border-left-color"
+             ,_1: cssColor(x)
+             ,_2: cssColor(y)};
+   });
+   var borderLeftColor = function (x) {
+      return {ctor: "_Tuple2"
+             ,_0: "border-left-color"
+             ,_1: cssColor(x)};
+   };
+   var borderColor$ = F2(function (x,
+   y) {
+      return {ctor: "_Tuple3"
+             ,_0: "border-color"
+             ,_1: cssColor(x)
+             ,_2: cssColor(y)};
+   });
+   var borderColor = function (x) {
+      return {ctor: "_Tuple2"
+             ,_0: "border-color"
+             ,_1: cssColor(x)};
+   };
+   var backgroundColor$ = F2(function (x,
+   y) {
+      return {ctor: "_Tuple3"
+             ,_0: "background-color"
+             ,_1: cssColor(x)
+             ,_2: cssColor(y)};
+   });
+   var backgroundColor = function (x) {
+      return {ctor: "_Tuple2"
+             ,_0: "background-color"
+             ,_1: cssColor(x)};
+   };
+   var color$ = F2(function (x,y) {
+      return {ctor: "_Tuple3"
+             ,_0: "color"
+             ,_1: cssColor(x)
+             ,_2: cssColor(y)};
+   });
+   var color = function (x) {
+      return {ctor: "_Tuple2"
+             ,_0: "color"
+             ,_1: cssColor(x)};
+   };
+   var serializeLength = function (x) {
+      return function () {
+         switch (x.ctor)
+         {case "InCentimeters":
+            return A2($Basics._op["++"],
+              $Basics.toString(x._0),
+              "cm");
+            case "InChs":
+            return A2($Basics._op["++"],
+              $Basics.toString(x._0),
+              "ch");
+            case "InEms":
+            return A2($Basics._op["++"],
+              $Basics.toString(x._0),
+              "em");
+            case "InExs":
+            return A2($Basics._op["++"],
+              $Basics.toString(x._0),
+              "ex");
+            case "InInchs":
+            return A2($Basics._op["++"],
+              $Basics.toString(x._0),
+              "in");
+            case "InMillimeters":
+            return A2($Basics._op["++"],
+              $Basics.toString(x._0),
+              "mm");
+            case "InPercents":
+            return A2($Basics._op["++"],
+              $Basics.toString(x._0),
+              "%");
+            case "InPicas":
+            return A2($Basics._op["++"],
+              $Basics.toString(x._0),
+              "pc");
+            case "InPixels":
+            return A2($Basics._op["++"],
+              $Basics.toString(x._0),
+              "px");
+            case "InPoints":
+            return A2($Basics._op["++"],
+              $Basics.toString(x._0),
+              "pt");
+            case "InRems":
+            return A2($Basics._op["++"],
+              $Basics.toString(x._0),
+              "rem");
+            case "InVhs":
+            return A2($Basics._op["++"],
+              $Basics.toString(x._0),
+              "vh");
+            case "InVmins":
+            return A2($Basics._op["++"],
+              $Basics.toString(x._0),
+              "vmax");
+            case "InVws":
+            return A2($Basics._op["++"],
+              $Basics.toString(x._0),
+              "vw");}
+         _U.badCase($moduleName,
+         "between lines 147 and 165");
+      }();
+   };
+   var padding = F2(function (x,
+   f) {
+      return {ctor: "_Tuple2"
+             ,_0: "padding"
+             ,_1: serializeLength(f(x))};
+   });
+   var padding$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "padding"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var paddingTop = F2(function (x,
+   f) {
+      return {ctor: "_Tuple2"
+             ,_0: "padding-top"
+             ,_1: serializeLength(f(x))};
+   });
+   var paddingTop$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "padding-top"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var paddingBottom = F2(function (x,
+   f) {
+      return {ctor: "_Tuple2"
+             ,_0: "padding-bottom"
+             ,_1: serializeLength(f(x))};
+   });
+   var paddingBottom$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "padding-bottom"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var paddingLeft = F2(function (x,
+   f) {
+      return {ctor: "_Tuple2"
+             ,_0: "padding-left"
+             ,_1: serializeLength(f(x))};
+   });
+   var paddingLeft$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "padding-left"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var paddingRight = F2(function (x,
+   f) {
+      return {ctor: "_Tuple2"
+             ,_0: "padding-right"
+             ,_1: serializeLength(f(x))};
+   });
+   var paddingRight$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "padding-right"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var margin = F2(function (x,f) {
+      return {ctor: "_Tuple2"
+             ,_0: "margin"
+             ,_1: serializeLength(f(x))};
+   });
+   var margin$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "margin"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var marginTop = F2(function (x,
+   f) {
+      return {ctor: "_Tuple2"
+             ,_0: "margin-top"
+             ,_1: serializeLength(f(x))};
+   });
+   var marginTop$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "margin-top"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var marginBottom = F2(function (x,
+   f) {
+      return {ctor: "_Tuple2"
+             ,_0: "margin-bottom"
+             ,_1: serializeLength(f(x))};
+   });
+   var marginBottom$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "margin-bottom"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var marginLeft = F2(function (x,
+   f) {
+      return {ctor: "_Tuple2"
+             ,_0: "margin-left"
+             ,_1: serializeLength(f(x))};
+   });
+   var marginLeft$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "margin-left"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var marginRight = F2(function (x,
+   f) {
+      return {ctor: "_Tuple2"
+             ,_0: "margin-right"
+             ,_1: serializeLength(f(x))};
+   });
+   var marginRight$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "margin-right"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var fontSize = F2(function (x,
+   f) {
+      return {ctor: "_Tuple2"
+             ,_0: "font-size"
+             ,_1: serializeLength(f(x))};
+   });
+   var fontSize$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "font-size"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var height = F2(function (x,f) {
+      return {ctor: "_Tuple2"
+             ,_0: "height"
+             ,_1: serializeLength(f(x))};
+   });
+   var height$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "height"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var minHeight = F2(function (x,
+   f) {
+      return {ctor: "_Tuple2"
+             ,_0: "min-height"
+             ,_1: serializeLength(f(x))};
+   });
+   var minHeight$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "min-height"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var maxHeight = F2(function (x,
+   f) {
+      return {ctor: "_Tuple2"
+             ,_0: "max-height"
+             ,_1: serializeLength(f(x))};
+   });
+   var maxHeight$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "max-height"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var width = F2(function (x,f) {
+      return {ctor: "_Tuple2"
+             ,_0: "width"
+             ,_1: serializeLength(f(x))};
+   });
+   var width$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "width"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var borderTopWidth = F2(function (x,
+   f) {
+      return {ctor: "_Tuple2"
+             ,_0: "border-top-width"
+             ,_1: serializeLength(f(x))};
+   });
+   var borderTopWidth$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "border-top-width"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var borderBottomWidth = F2(function (x,
+   f) {
+      return {ctor: "_Tuple2"
+             ,_0: "border-bottom-width"
+             ,_1: serializeLength(f(x))};
+   });
+   var borderBottomWidth$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "border-bottom-width"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var borderLeftWidth = F2(function (x,
+   f) {
+      return {ctor: "_Tuple2"
+             ,_0: "border-left-width"
+             ,_1: serializeLength(f(x))};
+   });
+   var borderLeftWidth$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "border-left-width"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var borderRightWidth = F2(function (x,
+   f) {
+      return {ctor: "_Tuple2"
+             ,_0: "border-right-width"
+             ,_1: serializeLength(f(x))};
+   });
+   var borderRightWidth$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "border-right-width"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var letterSpacing = F2(function (x,
+   f) {
+      return {ctor: "_Tuple2"
+             ,_0: "letter-spacing"
+             ,_1: serializeLength(f(x))};
+   });
+   var letterSpacing$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "letter-spacing"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var textIndent = F2(function (x,
+   f) {
+      return {ctor: "_Tuple2"
+             ,_0: "text-indent"
+             ,_1: serializeLength(f(x))};
+   });
+   var textIndent$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "text-indent"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var wordSpacing = F2(function (x,
+   f) {
+      return {ctor: "_Tuple2"
+             ,_0: "word-spacing"
+             ,_1: serializeLength(f(x))};
+   });
+   var wordSpacing$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "word-spacing"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var borderRadius = F2(function (x,
+   f) {
+      return {ctor: "_Tuple2"
+             ,_0: "border-radius"
+             ,_1: serializeLength(f(x))};
+   });
+   var borderRadius$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "border-radius"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var borderTopLeftRadius = F2(function (x,
+   f) {
+      return {ctor: "_Tuple2"
+             ,_0: "border-top-left-radius"
+             ,_1: serializeLength(f(x))};
+   });
+   var borderTopLeftRadius$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "border-top-left-radius"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var borderBottomLeftRadius = F2(function (x,
+   f) {
+      return {ctor: "_Tuple2"
+             ,_0: "border-bottom-left-radius"
+             ,_1: serializeLength(f(x))};
+   });
+   var borderBottomLeftRadius$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "border-bottom-left-radius"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var borderTopRightRadius = F2(function (x,
+   f) {
+      return {ctor: "_Tuple2"
+             ,_0: "border-top-right-radius"
+             ,_1: serializeLength(f(x))};
+   });
+   var borderTopRightRadius$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "border-top-right-radius"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var borderBottomRightRadius = F2(function (x,
+   f) {
+      return {ctor: "_Tuple2"
+             ,_0: "border-bottom-right-radius"
+             ,_1: serializeLength(f(x))};
+   });
+   var borderBottomRightRadius$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "border-bottom-right-radius"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var borderWidth = F2(function (x,
+   f) {
+      return {ctor: "_Tuple2"
+             ,_0: "border-width"
+             ,_1: serializeLength(f(x))};
+   });
+   var borderWidth$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "border-width"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var bottom = F2(function (x,f) {
+      return {ctor: "_Tuple2"
+             ,_0: "bottom"
+             ,_1: serializeLength(f(x))};
+   });
+   var bottom$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "bottom"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var top = F2(function (x,f) {
+      return {ctor: "_Tuple2"
+             ,_0: "top"
+             ,_1: serializeLength(f(x))};
+   });
+   var top$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "top"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var left = F2(function (x,f) {
+      return {ctor: "_Tuple2"
+             ,_0: "left"
+             ,_1: serializeLength(f(x))};
+   });
+   var left$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "left"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var right = F2(function (x,f) {
+      return {ctor: "_Tuple2"
+             ,_0: "right"
+             ,_1: serializeLength(f(x))};
+   });
+   var right$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "right"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var lineHeight = F2(function (x,
+   f) {
+      return {ctor: "_Tuple2"
+             ,_0: "line-height"
+             ,_1: serializeLength(f(x))};
+   });
+   var lineHeight$ = F4(function (x,
+   f,
+   y,
+   g) {
+      return {ctor: "_Tuple3"
+             ,_0: "line-height"
+             ,_1: serializeLength(f(x))
+             ,_2: serializeLength(g(y))};
+   });
+   var InPercents = function (a) {
+      return {ctor: "InPercents"
+             ,_0: a};
+   };
+   var prc = function (i) {
+      return InPercents(i);
+   };
+   var InPicas = function (a) {
+      return {ctor: "InPicas"
+             ,_0: a};
+   };
+   var pica = function (i) {
+      return InPicas(i);
+   };
+   var InPoints = function (a) {
+      return {ctor: "InPoints"
+             ,_0: a};
+   };
+   var pt = function (i) {
+      return InPoints(i);
+   };
+   var InInchs = function (a) {
+      return {ctor: "InInchs"
+             ,_0: a};
+   };
+   var inches = function (i) {
+      return InInchs(i);
+   };
+   var InCentimeters = function (a) {
+      return {ctor: "InCentimeters"
+             ,_0: a};
+   };
+   var cm = function (i) {
+      return InCentimeters(i);
+   };
+   var InMillimeters = function (a) {
+      return {ctor: "InMillimeters"
+             ,_0: a};
+   };
+   var mm = function (i) {
+      return InMillimeters(i);
+   };
+   var InPixels = function (a) {
+      return {ctor: "InPixels"
+             ,_0: a};
+   };
+   var px = function (i) {
+      return InPixels(i);
+   };
+   var InVmins = function (a) {
+      return {ctor: "InVmins"
+             ,_0: a};
+   };
+   var vmax = function (i) {
+      return InVmins(i);
+   };
+   var InVws = function (a) {
+      return {ctor: "InVws",_0: a};
+   };
+   var vw = function (i) {
+      return InVws(i);
+   };
+   var InVhs = function (a) {
+      return {ctor: "InVhs",_0: a};
+   };
+   var vh = function (i) {
+      return InVhs(i);
+   };
+   var InRems = function (a) {
+      return {ctor: "InRems"
+             ,_0: a};
+   };
+   var rem = function (i) {
+      return InRems(i);
+   };
+   var InChs = function (a) {
+      return {ctor: "InChs",_0: a};
+   };
+   var ch = function (i) {
+      return InChs(i);
+   };
+   var InExs = function (a) {
+      return {ctor: "InExs",_0: a};
+   };
+   var ex = function (i) {
+      return InExs(i);
+   };
+   var InEms = function (a) {
+      return {ctor: "InEms",_0: a};
+   };
+   var em = function (i) {
+      return InEms(i);
+   };
+   var serializeCssOptionalValue = F2(function (x,
+   s) {
+      return function () {
+         switch (x.ctor)
+         {case "CssOptionalJust":
+            return s(x._0);
+            case "None": return "none";}
+         _U.badCase($moduleName,
+         "between lines 54 and 56");
+      }();
+   });
+   var borderStyle = function (x) {
+      return {ctor: "_Tuple2"
+             ,_0: "border-style"
+             ,_1: A2(serializeCssOptionalValue,
+             x,
+             borderStyleSerializer)};
+   };
+   var border = F4(function (w,
+   f,
+   s,
+   c) {
+      return {ctor: "_Tuple2"
+             ,_0: "border"
+             ,_1: A2($Basics._op["++"],
+             serializeLength(f(w)),
+             A2($Basics._op["++"],
+             " ",
+             A2($Basics._op["++"],
+             A2(serializeCssOptionalValue,
+             s,
+             borderStyleSerializer),
+             A2($Basics._op["++"],
+             " ",
+             cssColor(c)))))};
+   });
+   var None = {ctor: "None"};
+   var none = None;
+   var CssOptionalJust = function (a) {
+      return {ctor: "CssOptionalJust"
+             ,_0: a};
+   };
+   var solid = CssOptionalJust(Solid);
+   var dotted = CssOptionalJust(Dotted);
+   var dashed = CssOptionalJust(Dashed);
+   var $double = CssOptionalJust(Double);
+   var groove = CssOptionalJust(Groove);
+   var ridge = CssOptionalJust(Ridge);
+   var inset = CssOptionalJust(Inset);
+   var outset = CssOptionalJust(Outset);
+   _elm.TypedStyles.values = {_op: _op
+                             ,CssOptionalJust: CssOptionalJust
+                             ,None: None
+                             ,none: none
+                             ,serializeCssOptionalValue: serializeCssOptionalValue
+                             ,InEms: InEms
+                             ,InExs: InExs
+                             ,InChs: InChs
+                             ,InRems: InRems
+                             ,InVhs: InVhs
+                             ,InVws: InVws
+                             ,InVmins: InVmins
+                             ,InPixels: InPixels
+                             ,InMillimeters: InMillimeters
+                             ,InCentimeters: InCentimeters
+                             ,InInchs: InInchs
+                             ,InPoints: InPoints
+                             ,InPicas: InPicas
+                             ,InPercents: InPercents
+                             ,em: em
+                             ,ex: ex
+                             ,ch: ch
+                             ,rem: rem
+                             ,vh: vh
+                             ,vw: vw
+                             ,vmax: vmax
+                             ,px: px
+                             ,mm: mm
+                             ,cm: cm
+                             ,inches: inches
+                             ,pt: pt
+                             ,pica: pica
+                             ,prc: prc
+                             ,serializeLength: serializeLength
+                             ,padding: padding
+                             ,padding$: padding$
+                             ,paddingTop: paddingTop
+                             ,paddingTop$: paddingTop$
+                             ,paddingBottom: paddingBottom
+                             ,paddingBottom$: paddingBottom$
+                             ,paddingLeft: paddingLeft
+                             ,paddingLeft$: paddingLeft$
+                             ,paddingRight: paddingRight
+                             ,paddingRight$: paddingRight$
+                             ,margin: margin
+                             ,margin$: margin$
+                             ,marginTop: marginTop
+                             ,marginTop$: marginTop$
+                             ,marginBottom: marginBottom
+                             ,marginBottom$: marginBottom$
+                             ,marginLeft: marginLeft
+                             ,marginLeft$: marginLeft$
+                             ,marginRight: marginRight
+                             ,marginRight$: marginRight$
+                             ,fontSize: fontSize
+                             ,fontSize$: fontSize$
+                             ,height: height
+                             ,height$: height$
+                             ,minHeight: minHeight
+                             ,minHeight$: minHeight$
+                             ,maxHeight: maxHeight
+                             ,maxHeight$: maxHeight$
+                             ,width: width
+                             ,width$: width$
+                             ,borderTopWidth: borderTopWidth
+                             ,borderTopWidth$: borderTopWidth$
+                             ,borderBottomWidth: borderBottomWidth
+                             ,borderBottomWidth$: borderBottomWidth$
+                             ,borderLeftWidth: borderLeftWidth
+                             ,borderLeftWidth$: borderLeftWidth$
+                             ,borderRightWidth: borderRightWidth
+                             ,borderRightWidth$: borderRightWidth$
+                             ,letterSpacing: letterSpacing
+                             ,letterSpacing$: letterSpacing$
+                             ,textIndent: textIndent
+                             ,textIndent$: textIndent$
+                             ,wordSpacing: wordSpacing
+                             ,wordSpacing$: wordSpacing$
+                             ,borderRadius: borderRadius
+                             ,borderRadius$: borderRadius$
+                             ,borderTopLeftRadius: borderTopLeftRadius
+                             ,borderTopLeftRadius$: borderTopLeftRadius$
+                             ,borderBottomLeftRadius: borderBottomLeftRadius
+                             ,borderBottomLeftRadius$: borderBottomLeftRadius$
+                             ,borderTopRightRadius: borderTopRightRadius
+                             ,borderTopRightRadius$: borderTopRightRadius$
+                             ,borderBottomRightRadius: borderBottomRightRadius
+                             ,borderBottomRightRadius$: borderBottomRightRadius$
+                             ,borderWidth: borderWidth
+                             ,borderWidth$: borderWidth$
+                             ,bottom: bottom
+                             ,bottom$: bottom$
+                             ,top: top
+                             ,top$: top$
+                             ,left: left
+                             ,left$: left$
+                             ,right: right
+                             ,right$: right$
+                             ,lineHeight: lineHeight
+                             ,lineHeight$: lineHeight$
+                             ,color: color
+                             ,color$: color$
+                             ,backgroundColor: backgroundColor
+                             ,backgroundColor$: backgroundColor$
+                             ,borderColor: borderColor
+                             ,borderColor$: borderColor$
+                             ,borderLeftColor: borderLeftColor
+                             ,borderLeftColor$: borderLeftColor$
+                             ,borderRightColor: borderRightColor
+                             ,borderRightColor$: borderRightColor$
+                             ,borderTopColor: borderTopColor
+                             ,borderTopColor$: borderTopColor$
+                             ,borderBottomColor: borderBottomColor
+                             ,borderBottomColor$: borderBottomColor$
+                             ,outlineColor: outlineColor
+                             ,outlineColor$: outlineColor$
+                             ,Solid: Solid
+                             ,Dotted: Dotted
+                             ,Dashed: Dashed
+                             ,Double: Double
+                             ,Groove: Groove
+                             ,Ridge: Ridge
+                             ,Inset: Inset
+                             ,Outset: Outset
+                             ,borderStyleSerializer: borderStyleSerializer
+                             ,solid: solid
+                             ,dotted: dotted
+                             ,dashed: dashed
+                             ,$double: $double
+                             ,groove: groove
+                             ,ridge: ridge
+                             ,inset: inset
+                             ,outset: outset
+                             ,cssColor: cssColor
+                             ,textLeft: textLeft
+                             ,textRight: textRight
+                             ,textCenter: textCenter
+                             ,textJustify: textJustify
+                             ,opacity: opacity
+                             ,opacity$: opacity$
+                             ,borderStyle: borderStyle
+                             ,border: border};
+   return _elm.TypedStyles.values;
 };Elm.VirtualDom = Elm.VirtualDom || {};
 Elm.VirtualDom.make = function (_elm) {
    "use strict";
