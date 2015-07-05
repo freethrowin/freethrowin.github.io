@@ -8,9 +8,10 @@ import TypedStyles exposing (..)
 import FreeThrow
 import Style exposing (font, background, layout)
 
--- View
+app : Html
 app =
   div [ style (font ++ background ++ layout) ] [text "Freethrows are fun."]
 
+main : Html
 main =
   app
