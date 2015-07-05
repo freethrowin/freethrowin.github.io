@@ -1795,6 +1795,40 @@ Elm.Dict.make = function (_elm) {
                       ,toList: toList
                       ,fromList: fromList};
    return _elm.Dict.values;
+};Elm.FreeThrow = Elm.FreeThrow || {};
+Elm.FreeThrow.make = function (_elm) {
+   "use strict";
+   _elm.FreeThrow = _elm.FreeThrow || {};
+   if (_elm.FreeThrow.values)
+   return _elm.FreeThrow.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "FreeThrow";
+   var ThreePointer = {ctor: "ThreePointer"};
+   var FreeThrow = {ctor: "FreeThrow"};
+   var Layup = {ctor: "Layup"};
+   var Shot = F2(function (a,b) {
+      return {_: {}
+             ,made: b
+             ,technique: a};
+   });
+   var Session = F3(function (a,
+   b,
+   c) {
+      return {_: {}
+             ,percentage: c
+             ,player: a
+             ,shots: b};
+   });
+   _elm.FreeThrow.values = {_op: _op
+                           ,Session: Session
+                           ,Shot: Shot
+                           ,Layup: Layup
+                           ,FreeThrow: FreeThrow
+                           ,ThreePointer: ThreePointer};
+   return _elm.FreeThrow.values;
 };Elm.Graphics = Elm.Graphics || {};
 Elm.Graphics.Collage = Elm.Graphics.Collage || {};
 Elm.Graphics.Collage.make = function (_elm) {
@@ -4048,7 +4082,7 @@ Elm.Main.make = function (_elm) {
                                   ,_1: "rgb(255, 0, 0)"}]);
    var layout = _L.fromArray([{ctor: "_Tuple2"
                               ,_0: "padding"
-                              ,_1: "20px"}]);
+                              ,_1: "2em"}]);
    var font = _L.fromArray([{ctor: "_Tuple2"
                             ,_0: "font-family"
                             ,_1: "futura, sans-serif"}
@@ -4064,7 +4098,7 @@ Elm.Main.make = function (_elm) {
    A2($Basics._op["++"],
    background,
    layout)))]),
-   _L.fromArray([$Html.text("yo")]));
+   _L.fromArray([$Html.text("Freethrows are fun.")]));
    var main = app;
    _elm.Main.values = {_op: _op
                       ,font: font
