@@ -3414,8 +3414,12 @@ Elm.Main.make = function (_elm) {
    _L = _N.List.make(_elm),
    $moduleName = "Main",
    $Html = Elm.Html.make(_elm);
-   var main = $Html.text("yo!");
+   var app = A2($Html.div,
+   _L.fromArray([]),
+   _L.fromArray([$Html.text("yo")]));
+   var main = app;
    _elm.Main.values = {_op: _op
+                      ,app: app
                       ,main: main};
    return _elm.Main.values;
 };Elm.Maybe = Elm.Maybe || {};
