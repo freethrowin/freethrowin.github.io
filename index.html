@@ -4076,34 +4076,17 @@ Elm.Main.make = function (_elm) {
    $moduleName = "Main",
    $Basics = Elm.Basics.make(_elm),
    $Html = Elm.Html.make(_elm),
-   $Html$Attributes = Elm.Html.Attributes.make(_elm);
-   var background = _L.fromArray([{ctor: "_Tuple2"
-                                  ,_0: "background-color"
-                                  ,_1: "rgb(255, 0, 0)"}]);
-   var layout = _L.fromArray([{ctor: "_Tuple2"
-                              ,_0: "padding"
-                              ,_1: "2em"}]);
-   var font = _L.fromArray([{ctor: "_Tuple2"
-                            ,_0: "font-family"
-                            ,_1: "futura, sans-serif"}
-                           ,{ctor: "_Tuple2"
-                            ,_0: "color"
-                            ,_1: "rgb(42, 42, 42)"}
-                           ,{ctor: "_Tuple2"
-                            ,_0: "font-size"
-                            ,_1: "2em"}]);
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $Style = Elm.Style.make(_elm);
    var app = A2($Html.div,
    _L.fromArray([$Html$Attributes.style(A2($Basics._op["++"],
-   font,
+   $Style.font,
    A2($Basics._op["++"],
-   background,
-   layout)))]),
+   $Style.background,
+   $Style.layout)))]),
    _L.fromArray([$Html.text("Freethrows are fun.")]));
    var main = app;
    _elm.Main.values = {_op: _op
-                      ,font: font
-                      ,layout: layout
-                      ,background: background
                       ,app: app
                       ,main: main};
    return _elm.Main.values;
@@ -12737,6 +12720,37 @@ Elm.String.make = function (_elm) {
                         ,any: any
                         ,all: all};
    return _elm.String.values;
+};Elm.Style = Elm.Style || {};
+Elm.Style.make = function (_elm) {
+   "use strict";
+   _elm.Style = _elm.Style || {};
+   if (_elm.Style.values)
+   return _elm.Style.values;
+   var _op = {},
+   _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   $moduleName = "Style";
+   var background = _L.fromArray([{ctor: "_Tuple2"
+                                  ,_0: "background-color"
+                                  ,_1: "rgb(0, 255, 0)"}]);
+   var layout = _L.fromArray([{ctor: "_Tuple2"
+                              ,_0: "padding"
+                              ,_1: "2em"}]);
+   var font = _L.fromArray([{ctor: "_Tuple2"
+                            ,_0: "font-family"
+                            ,_1: "futura, sans-serif"}
+                           ,{ctor: "_Tuple2"
+                            ,_0: "color"
+                            ,_1: "rgb(42, 42, 42)"}
+                           ,{ctor: "_Tuple2"
+                            ,_0: "font-size"
+                            ,_1: "2em"}]);
+   _elm.Style.values = {_op: _op
+                       ,font: font
+                       ,layout: layout
+                       ,background: background};
+   return _elm.Style.values;
 };Elm.Task = Elm.Task || {};
 Elm.Task.make = function (_elm) {
    "use strict";
