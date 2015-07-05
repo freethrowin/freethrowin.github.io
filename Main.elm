@@ -1,6 +1,11 @@
+module Main where
+
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import TypedStyles exposing (..)
+import FreeThrow
+
+-- styles
 
 font : List (String, String)
 font =
@@ -10,14 +15,15 @@ font =
 
 layout : List (String, String)
 layout =
-  [ ("padding", "20px") ]
+  [ ("padding", "2em") ]
 
 background : List (String, String)
 background =
   [ ("background-color", "rgb(255, 0, 0)") ]
 
+-- View
 app =
-  div [ style (font ++ background ++ layout) ] [text "yo"]
+  div [ style (font ++ background ++ layout) ] [text "Freethrows are fun."]
 
 main =
   app
