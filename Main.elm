@@ -1,3 +1,4 @@
-import Graphics.Element exposing (..)
+import Html exposing (text)
 
-main = show "Yo world!"
+main =
+  text "yo!"
