@@ -1,4 +1,7 @@
-import Html exposing (text)
+import Html exposing (..)
+
+app =
+  div [] [text "yo"]
 
 main =
-  text "yo!"
+  app
