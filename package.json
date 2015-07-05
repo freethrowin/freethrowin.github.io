@@ -1,0 +1,27 @@
+{
+  "name": "freethrowin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify -d -e src/js/app.jsx -t babelify -o build/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freethrowin/freethrowin.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/freethrowin/freethrowin.github.io/issues"
+  },
+  "homepage": "https://github.com/freethrowin/freethrowin.github.io#readme",
+  "dependencies": {
+    "react": "^0.13.3"
+  },
+  "devDependencies": {
+    "babelify": "^6.1.2",
+    "browserify": "^10.2.4"
+  }
+}
