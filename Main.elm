@@ -1,8 +1,7 @@
 module Main where
 
-import Html exposing (..)
-import Html.Attributes exposing (..)
-import TypedStyles exposing (..)
+import Html exposing (Html, div, text)
+import Html.Attributes exposing (style)
 
 -- project imports
 import FreeThrow
