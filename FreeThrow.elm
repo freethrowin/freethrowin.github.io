@@ -4,7 +4,8 @@ type alias Session =
   {
     player : String,
     shots : List Shot,
-    percentage : Int
+    percentage : Int,
+    score: Int
   }
 
 type alias Shot =
