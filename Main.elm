@@ -30,11 +30,11 @@ view address model =
   div [] [
     div [ style (font ++ background ++ layout) ] [
         text "Freethrows are fun"
-        , div [style Style.currentSession] [
-          h4 [] [text <| "Shots Taken: " ++ (toString (List.length model.shots))]
-          , h4 [] [text <| "Shot percentage: " ++ (toString model.percentage) ++ "%"]
-          , h4 [] [text <| "Score: " ++ (toString model.score)]
-        ]
+        , div [style Style.currentSession] <|
+          List.map buildStatView
+            [ ("Shots Taken: ",  (List.length model.shots), "")
+            , ("Shot percentage: ", model.percentage, "%")
+            , ("Score: ", model.score, "") ]
         , h2 [] [text (toString model.currentShotType)]
     ]
     , div [] <|
@@ -46,6 +46,11 @@ view address model =
       , button [onClick address (Shoot <| (setupShot model.currentShotType False))] [text "don't make it"]
     ]
   ]
+
+buildStatView : (String, Int, String) -> Html
+buildStatView (prefix, stat, suffix) =
+  h4 [] [text <| prefix ++ (toString stat) ++ suffix]
+
 
 shotRadio :  Address Action -> Session -> ShotType -> String -> List Html
 shotRadio  address model shotType name =
