@@ -27,22 +27,22 @@ model =
 
 view : Address Action -> Session -> Html
 view address model =
-  div [] [
-    div [ style (font ++ background ++ layout) ] [
-        text "Freethrows are fun"
-        , div [style Style.currentSession] <|
-          List.map buildStatView
-            [ ("Shots Taken: ",  (List.length model.shots), "")
-            , ("Shot percentage: ", model.percentage, "%")
-            , ("Score: ", model.score, "") ]
-        , h2 [] [text (toString model.currentShotType)]
-    ]
+  div []
+    [ div [ style (font ++ background ++ layout) ]
+      [ text "Freethrows are fun"
+      , div [style Style.currentSession] <|
+        List.map buildStatView
+          [ ("Shots Taken: ",  (List.length model.shots), "")
+          , ("Shot percentage: ", model.percentage, "%")
+          , ("Score: ", model.score, "") ]
+      , h2 [] [ text (toString model.currentShotType) ] ]
+
     , div [] <|
-      List.map (\shotType -> shotRadio address model shotType) [Layup, FreeThrow, ThreePointer]
-    , div [] [
-      button [onClick address (Shoot <| (setupShot model True))] [text "made it"]
-      , button [onClick address (Shoot <| (setupShot model False))] [text "don't made it"]
-    ]
+        List.map (\shotType -> shotRadio address model shotType) [Layup, FreeThrow, ThreePointer]
+
+    , div []
+      [ button [ onClick address (setupShot model True |> Shoot)] [text "made it"]
+      , button [onClick address (setupShot model False |> Shoot)] [text "don't made it"] ]
   ]
 
 buildStatView : (String, Int, String) -> Html
@@ -56,7 +56,7 @@ shotRadio  address model shotType =
     [ input
       [ type' "radio"
       , checked (model.currentShotType == shotType)
-      , on "change" targetChecked (\_ -> Signal.message address (ChangeShot shotType))
+      , on "change" targetChecked (\_ ->  ChangeShot shotType |> Signal.message address )
       ] []
     , text (toString shotType)
     , br [] [] ]
