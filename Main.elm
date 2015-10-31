@@ -42,7 +42,7 @@ view address model =
 
     , div []
       [ button [ onClick address (setupShot model True |> Shoot)] [text "made it"]
-      , button [onClick address (setupShot model False |> Shoot)] [text "don't made it"] ]
+      , button [onClick address (setupShot model False |> Shoot)] [text "didn't make it"] ]
   ]
 
 buildStatView : (String, Int, String) -> Html
