@@ -2,9 +2,10 @@ module Main where
 
 import List
 import String
-import Html exposing (Html, div, text, button, input)
-import Html.Events exposing (onClick)
-import Html.Attributes exposing (style)
+import Signal exposing (Address)
+import Html exposing (..)
+import Html.Events exposing (onClick, targetChecked, on)
+import Html.Attributes exposing (..)
 import StartApp.Simple as StartApp
 
 -- project imports
@@ -21,12 +22,46 @@ model =
   , shots = []
   , percentage = 0
   , score = 0
+  , currentShotType = Layup
   }
 
+view : Address Action -> Session -> Html
 view address model =
-  div [ style (font ++ background ++ layout) ] [
-      text "Freethrows are fun"
+  div [] [
+    div [ style (font ++ background ++ layout) ] [
+        text "Freethrows are fun"
+        , div [style Style.currentSession] [
+          h4 [] [text <| "Shots Taken: " ++ (toString (List.length model.shots))]
+          , h4 [] [text <| "Shot percentage: " ++ (toString model.percentage) ++ "%"]
+          , h4 [] [text <| "Score: " ++ (toString model.score)]
+        ]
+        , h2 [] [text (toString model.currentShotType)]
     ]
+    , div [] <|
+      shotRadio address model Layup "layup"
+      ++ shotRadio address model FreeThrow "freethrow"
+      ++ shotRadio address model ThreePointer "threepointer"
+    , div [] [
+      button [onClick address (Shoot <| (setupShot model.currentShotType True))] [text "make it"]
+      , button [onClick address (Shoot <| (setupShot model.currentShotType False))] [text "don't make it"]
+    ]
+  ]
+
+shotRadio :  Address Action -> Session -> ShotType -> String -> List Html
+shotRadio  address model shotType name =
+  [ input
+      [ type' "radio"
+      , checked (model.currentShotType == shotType)
+      , on "change" targetChecked (\_ -> Signal.message address (ChangeShot shotType))
+      ]
+      []
+  , text name
+  , br [] []
+  ]
+
+setupShot : ShotType -> Bool -> Shot
+setupShot shotType made =
+  {technique = shotType, made = made}
 
 takeShot : Shot -> Session -> Session
 takeShot shot session =
@@ -48,6 +83,10 @@ getMadeShotCount : List Shot -> Int
 getMadeShotCount shots =
   List.length (List.filter .made shots)
 
+changeShotType : ShotType -> Session -> Session
+changeShotType shotType model =
+  {model | currentShotType <- shotType}
+
 
 getShotScore : Shot -> Int
 getShotScore {technique, made} =
@@ -68,4 +107,6 @@ update action model =
   case action of
     Shoot shot ->
       takeShot shot model
+    ChangeShot shotType ->
+      changeShotType shotType model
 
