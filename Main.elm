@@ -38,12 +38,10 @@ view address model =
         , h2 [] [text (toString model.currentShotType)]
     ]
     , div [] <|
-      shotRadio address model Layup "layup"
-      ++ shotRadio address model FreeThrow "freethrow"
-      ++ shotRadio address model ThreePointer "threepointer"
+      List.map (\shotType -> shotRadio address model shotType) [Layup, FreeThrow, ThreePointer]
     , div [] [
-      button [onClick address (Shoot <| (setupShot model.currentShotType True))] [text "make it"]
-      , button [onClick address (Shoot <| (setupShot model.currentShotType False))] [text "don't make it"]
+      button [onClick address (Shoot <| (setupShot model True))] [text "made it"]
+      , button [onClick address (Shoot <| (setupShot model False))] [text "don't made it"]
     ]
   ]
 
@@ -52,21 +50,21 @@ buildStatView (prefix, stat, suffix) =
   h4 [] [text <| prefix ++ (toString stat) ++ suffix]
 
 
-shotRadio :  Address Action -> Session -> ShotType -> String -> List Html
-shotRadio  address model shotType name =
-  [ input
+shotRadio :  Address Action -> Session -> ShotType -> Html
+shotRadio  address model shotType =
+  label []
+    [ input
       [ type' "radio"
       , checked (model.currentShotType == shotType)
       , on "change" targetChecked (\_ -> Signal.message address (ChangeShot shotType))
-      ]
-      []
-  , text name
-  , br [] []
-  ]
+      ] []
+    , text (toString shotType)
+    , br [] [] ]
 
-setupShot : ShotType -> Bool -> Shot
-setupShot shotType made =
-  {technique = shotType, made = made}
+
+setupShot : Session -> Bool -> Shot
+setupShot {currentShotType} made =
+  {technique = currentShotType, made = made}
 
 takeShot : Shot -> Session -> Session
 takeShot shot session =
