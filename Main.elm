@@ -77,9 +77,9 @@ takeShot shot session =
   in
     {
       session |
-        shots <- newShots
-        , score <- newScore
-        , percentage <- round ((toFloat madeShots / toFloat shotsTaken) * 100)
+        shots = newShots
+        , score = newScore
+        , percentage = round ((toFloat madeShots / toFloat shotsTaken) * 100)
     }
 
 getMadeShotCount : List Shot -> Int
@@ -88,7 +88,11 @@ getMadeShotCount shots =
 
 changeShotType : ShotType -> Session -> Session
 changeShotType shotType model =
-  {model | currentShotType <- shotType}
+  {model | currentShotType = shotType}
+
+changeName : String -> Session -> Session
+changeName newName model =
+  {model | player = newName}
 
 
 getShotScore : Shot -> Int
@@ -112,4 +116,6 @@ update action model =
       takeShot shot model
     ChangeShot shotType ->
       changeShotType shotType model
+    ChangeName newName ->
+      changeName newName model
 
